@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body class="w-[400px] flex flex-col justify-center items-center">
+    <header style="background-image: linear-gradient(to bottom left, #0364BD, #5AA9E6);"
+        class="p-5 bg-gradient-to-bl from-[#0364BD] to-[#5AA9E6] flex justify-between items-center w-full text-white">
+        <h1 class="m-0 text-3xl font-bold tracking-tighter">PhishBlockr Extension</h1>
+    </header>
+    <main class="flex flex-col gap-2 p-5">
+        <div class="flex gap-2 justify-start items-center">
+            <p>Organization</p>
+            <select id="organizationSelect" style="padding: 5px;"
+                class="focus:outline-none visited:outline-none active:outline-none rounded-md border-2 border-gray-200">
+                <option value="default" selected>Select</option>
+            </select>
+        </div>
+        <div class="flex gap-2 justify-start items-center">
+            <p>Username: </p>
+            <input placeholder="John Doe" type="text" style="padding: 5px;"
+                class="focus:outline-none visited:outline-none active:outline-none rounded-md border-2 border-gray-200">
+        </div>
+        <div class="flex gap-2 justify-start items-center">
+            <p>Password: </p>
+            <input placeholder="John123" type="password" style="padding: 5px;"
+                class="focus:outline-none visited:outline-none active:outline-none rounded-md border-2 border-gray-200">
+        </div>
+        <button id="login" style="background: #0364BD;"
+            class="w-full p-2 rounded-md tracking-tight font-medium text-white">sign in</button>
+    </main>
+    <footer class="w-full flex justify-between items-center p-3 text-xs">
+        <p><a href="https://phishblockr.com" target="_blank">PhishBlockr.com</a></p>
+        <p>Privacy Policy</p>
+    </footer>
+    <script src="login.js"></script>
+    <script src="background.js"></script>
+</body>
+
+</html>

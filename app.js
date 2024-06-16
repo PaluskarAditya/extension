@@ -6,7 +6,7 @@
 //     })
 // })
 
-// Block page if exsting in boocked websites
+// Block page if exsting in blocked websites
 const blocked = [
 	// "www.youtube.com",
 	"www.facebook.com"
@@ -23,3 +23,22 @@ blocked.map(el => {
     `;
     }
 });
+
+const btn = document.getElementById('advanced');
+
+btn.onclick = () => {
+    const infoDiv = document.getElementById('hidden');
+    
+    // Logic for accordion
+    if (infoDiv.className.includes('hidden')) {
+        infoDiv.classList.remove('hidden');
+        document.getElementById('toggle').setAttribute('src', 'images/chevron-up.png');
+    } else {
+        infoDiv.classList.add('hidden');
+        document.getElementById('toggle').setAttribute('src', 'images/chevron-down.png')
+    }
+}
+
+const login = document.getElementById('login');
+
+login.onclick = () => alert('Login Successfull!!!')

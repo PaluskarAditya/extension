@@ -11,9 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
-<body class="w-[400px] flex flex-col gap-5 justify-center items-center">
-    <header class="p-3 bg-gradient-to-bl from-[] flex justify-between items-center w-full">
-        <h1 class="m-0 text-3xl font-bold tracking-normal">PhishBlockr Extension</h1>
+<body class="w-[400px] flex flex-col gap-5 justify-center items-center text-sm">
+    <header style="background-image: linear-gradient(to bottom left, #0364BD, #5AA9E6);"
+        class="p-5 bg-gradient-to-bl from-[#0364BD] to-[#5AA9E6] flex justify-between items-center w-full text-white">
+        <h1 class="m-0 text-3xl font-bold tracking-tighter">PhishBlockr Extension</h1>
     </header>
     <main class="p-3 pt-0 w-full text-left gap-2 flex flex-col">
         <div class="flex flex-col gap-2">
@@ -25,26 +26,29 @@
             </div>
             <p class="text-center">phishblockr may produce inaccurate results</p>
         </div>
-        <button class="w-full mt-2 gap-1 bg-black text-white rounded-md p-2 flex justify-center items-center">
-            <p class="text-sm">Settings</p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-settings">
-                <path
-                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
-                <circle cx="12" cy="12" r="3" />
-            </svg>
-        </button>
         <div class="text-sm mt-2">
-            <button class="flex gap-1 w-full" id="advanced">
-                <svg id="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-square-chevron-right">
-                    <rect width="18" height="18" x="3" y="3" rx="2" />
-                    <path d="m10 8 4 4-4 4" />
-                </svg>
-                <p>advanced options</p>
+            <button class="flex gap-1 w-full justify-between items-center" id="advanced">
+                <p class="text-md">advanced options</p>
+                <img style="height: 20px; width: 20px;" id="toggle" src="images/chevron-down.png" alt="">
             </button>
+            <div id="hidden" style="background: rgb(232, 232, 232); border-radius: 5px; margin-bottom: 10px;"
+                class="transition flex-col flex gap-2 bg-gray-200 p-3 rounded-b-md hidden mt-2">
+                <div style="background: white; border-radius: 5px;" class="bg-white p-2">
+                    <p class="text-xs">Probably legitimate: <span style="color: green;" class="text-green-600"
+                            id="legit"></span></p>
+                </div>
+                <div style="background: white; border-radius: 5px;" class="bg-white p-2">
+                    <p class="text-xs">Probably phishing: <span style="color: red;" class="text-green-600"
+                            id="phishing"></span></p>
+                </div>
+            </div>
+            <a href="/settings.html" class="w-full">
+                <button style="background: #0364BD; margin-top: 5px;"
+                    class="w-full p-2 rounded-md tracking-tight font-medium text-white flex justify-center items-center gap-1">
+                    <p>Settings</p>
+                    <img src="/images/settings.png" style="height: 15px; width: 15px;" />
+                </button>
+            </a>
         </div>
     </main>
     <footer class="w-full flex justify-between items-center p-3 pt-0">
@@ -52,6 +56,7 @@
         <p>Privacy Policy</p>
     </footer>
     <script src="background.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

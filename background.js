@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
 					});
 				} else {
 					document.getElementById('prediction').textContent = data.prediction;
+					document.getElementById('legit').textContent = data.probability_legitimate + '%';
+					document.getElementById('phishing').textContent = data.probability_phishing + '%';
 				}
 			});
 	});
