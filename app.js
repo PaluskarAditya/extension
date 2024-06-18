@@ -8,8 +8,8 @@
 
 // Block page if exsting in blocked websites
 const blocked = [
-	// "www.youtube.com",
-	"www.facebook.com"
+    // "www.youtube.com",
+    "www.facebook.com"
 ]
 
 const blockedPage = ''
@@ -25,10 +25,9 @@ blocked.map(el => {
 });
 
 const btn = document.getElementById('advanced');
-
 btn.onclick = () => {
     const infoDiv = document.getElementById('hidden');
-    
+
     // Logic for accordion
     if (infoDiv.className.includes('hidden')) {
         infoDiv.classList.remove('hidden');
@@ -38,7 +37,3 @@ btn.onclick = () => {
         document.getElementById('toggle').setAttribute('src', 'images/chevron-down.png')
     }
 }
-
-const login = document.getElementById('login');
-
-login.onclick = () => alert('Login Successfull!!!')

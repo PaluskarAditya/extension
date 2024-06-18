@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+	chrome.tabs.onCreated.addListener((tab) => {
+		// if (tab.url.startsWith("http")) {
+		alert(tab.url);
+		// }
+	});
+
+	chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+		// if (changeInfo.url && tab.url.startsWith("http")) {
+		alert(tab.url);
+		// }
+	});
+
 	// Get active tab url
 	chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
 		let activeTab = tabs[0];
@@ -28,4 +40,21 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			});
 	});
+
+	const logout = document.getElementById('logout');
+	logout.onclick = () => {
+		localStorage.clear();
+		chrome.notifications.create(
+			"Phishblockr Alert",
+			{
+				type: "basic",
+				iconUrl: "./images/logo.jpg",
+				title: "Logout Successfulll!!!",
+				message: "you are successfully logged out",
+				priority: 1
+			},
+			function () { }
+		);
+		window.location.href = './login.html';
+	};
 });
