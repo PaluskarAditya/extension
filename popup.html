@@ -12,12 +12,26 @@
 </head>
 
 <body class="w-[400px] flex flex-col gap-5 justify-center items-center text-sm">
-    <header style="background-image: linear-gradient(to bottom left, #0364BD, #5AA9E6);"
+    <header style="background-color: #0364BD;"
         class="p-5 bg-gradient-to-bl from-[#0364BD] to-[#5AA9E6] flex justify-between items-center w-full text-white">
-        <h1 class="m-0 text-3xl font-bold tracking-tighter">PhishBlockr Extension</h1>
+        <h1 class="m-0 text-3xl font-bold tracking-tighter">PhishBlockr </h1>
         <button id="logout"><img src="images/log-out.png" style="height: 20px; width: 20px;" /></button>
     </header>
     <main class="p-3 pt-0 w-full text-left gap-2 flex flex-col">
+        <div class="flex gap-2 w-full">
+            <div class="flex-1 flex-col w-full flex justify-end items-start" style="padding: 10px; border: 2px solid rgb(234, 234, 234); border-radius: 5px; font-weight: bold;">
+                <p class="text-3xl">16</p>
+                <p class="font-normal" style="font-weight: 300;">visited</p>
+            </div>
+            <div class="flex-1 flex-col w-full flex justify-end items-start" style="padding: 10px; border: 2px solid rgb(234, 234, 234); border-radius: 5px; font-weight: bold;">
+                <p class="text-3xl">16</p>
+                <p class="font-normal" style="font-weight: 300;">blacklisted</p>
+            </div>
+            <div class="flex-1 flex-col w-full flex justify-end items-start" style="padding: 10px; border: 2px solid rgb(234, 234, 234); border-radius: 5px; font-weight: bold;">
+                <p class="text-3xl">16</p>
+                <p class="font-normal" style="font-weight: 300;">unknown</p>
+            </div>
+        </div>
         <div class="flex flex-col gap-2">
             <div class="p-2 rounded-md border-2 border-gray-200">
                 <p class="text-sm">URL: <span id="hostname"></span></p>
@@ -53,8 +67,8 @@
         </div>
     </main>
     <footer class="w-full flex justify-between items-center p-3 pt-0">
-        <p><a href="https://phishblockr.com" target="_blank">PhishBlockr.com</a></p>
-        <p>Privacy Policy</p>
+        <p style="font-size: 12px;"><a href="https://phishblockr.com" target="_blank">PhishBlockr.com</a></p>
+        <p style="font-size: 12px;">Privacy Policy</p>
     </footer>
     <script src="background.js"></script>
     <script src="app.js"></script>

@@ -8,19 +8,17 @@
 
 // Block page if exsting in blocked websites
 const blocked = [
-    // "www.youtube.com",
-    "www.facebook.com"
+   // "www.youtube.com",
+   "facebook.com",
+    "example.com"
 ]
 
 const blockedPage = ''
 
 blocked.map(el => {
-    if (window.location.href.includes(el)) {
-        document.body.innerHTML = `
-        <div style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: black; color: white;">
-            <h1 style="color: white; font-size: 40px; font-weight: 100; display: flex; justify-content: center; align-items: center; gap: 10px;">404 | page not found</h1>
-        </div>
-    `;
+    let currentUrl =  window.location.origin;
+    if(currentUrl.includes(el.toLowerCase())){
+        window.location.href = chrome.runtime.getURL("chrome-extensions://invalid"); // Redirect to the block page;
     }
 });
 

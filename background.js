@@ -1,3 +1,11 @@
+const stats = {
+	visited: 16,
+	unknown: 34,
+	blacklisted: 9
+}
+
+localStorage.setItem('objects', JSON.stringify(stats));
+
 document.addEventListener('DOMContentLoaded', () => {
 	chrome.tabs.onCreated.addListener((tab) => {
 		// if (tab.url.startsWith("http")) {
@@ -7,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 		// if (changeInfo.url && tab.url.startsWith("http")) {
-		alert(tab.url);
+		//alert(tab.url);
 		// }
 	});
 
@@ -57,4 +65,5 @@ document.addEventListener('DOMContentLoaded', () => {
 		);
 		window.location.href = './login.html';
 	};
+
 });
